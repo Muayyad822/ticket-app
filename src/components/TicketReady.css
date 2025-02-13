@@ -1,0 +1,118 @@
+body {
+    margin: 10px;
+    padding: 10px;
+    font-family: 'Inter', sans-serif;
+    background-color: #0A1A1E;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+   .container {
+    height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .ticket-box {
+    background-color: #122529;
+    border-radius: 20px;
+    padding: 30px;
+    width: 100%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  }
+  
+  .title {
+    font-size: 1.5em;
+    border-bottom: 1px solid #3a4f52;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .ticket-content {
+    text-align: center;
+  }
+  
+  .event-name {
+    color: #58C2C5;
+    font-size: 1.8em;
+    font-weight: bold;
+  }
+  
+  .event-description {
+    color: #bbb;
+    margin-top: 10px;
+  }
+  
+  .event-details {
+    color: #888;
+    margin-top: 5px;
+  }
+  
+  .attendee-info {
+    margin-top: 20px;
+    
+  }
+  
+  .info-group {
+    margin-bottom: 15px;
+  }
+  
+  .info-group label {
+    color: #bbb;
+    font-size: 0.9em;
+  }
+  
+  .info-group p {
+    margin: 5px 0 0;
+    font-size: 1.1em;
+  }
+  
+  .barcode {
+    margin: 20px 0;
+  }
+  
+  .barcode img {
+    width: 100px;
+    filter: grayscale(1);
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+  }
+  
+  .book-another-button {
+    padding: 15px;
+    border: 1px solid #3a4f52;
+    border-radius: 10px;
+    background-color: #1C373D;
+    color: #bbb;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .book-another-button:hover {
+    color: #fff;
+  }
+  
+  .download-button {
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: #58C2C5;
+    color: #000;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .download-button:hover {
+    background-color: #45b2b3;
+  }
