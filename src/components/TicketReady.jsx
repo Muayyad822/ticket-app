@@ -23,7 +23,21 @@ export default function TicketReady() {
 
   const handleDownload = async () => {
     if (ticketRef.current) {
-      const canvas = await html2canvas(ticketRef.current);
+      const images = ticketRef.current.querySelectorAll('img');
+      const imagePromises = Array.from(images).map((img) =>
+        new Promise((resolve) => {
+          if (img.complete) {
+            resolve();
+          } else {
+            img.onload = () => resolve();
+            img.onerror = () => resolve();
+          }
+        })
+      );
+
+      await Promise.all(imagePromises);
+
+      const canvas = await html2canvas(ticketRef.current, { useCORS: true });
       const image = canvas.toDataURL("image/png");
 
       const link = document.createElement("a");
@@ -34,7 +48,7 @@ export default function TicketReady() {
   };
 
   const handleBookAnother = () => {
-    navigate("/");
+    navigate("/ticket-select");
   };
 
   if (!ticketDetails) return <div>Loading...</div>;
@@ -45,7 +59,7 @@ export default function TicketReady() {
         <h2 className="title">MY TICKETS</h2>
         <div className="ticket-content">
           <h3 className="event-name">Techember Fest '25</h3>
-          <p className="event-details">📍 Event Location |📅 March 15, 2025 |🕕 7:50 PM</p>
+          <p className="event-details">📍 Event Location | March 15, 2025 | 7:50 PM</p>
 
           <div className="attendee-info">
             <p><strong>Name:</strong> {ticketDetails.fullName}</p>
@@ -55,7 +69,7 @@ export default function TicketReady() {
 
             {ticketDetails.avatarUrl && (
               <div className="avatar-section">
-                <img src={ticketDetails.avatarUrl} alt="Avatar" className="avatar-image" />
+                <img src={ticketDetails.avatarUrl} alt="Avatar" className="avatar-image" crossOrigin="anonymous" />
               </div>
             )}
           </div>
