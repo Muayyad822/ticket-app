@@ -48,7 +48,7 @@ export default function TicketReady() {
   };
 
   const handleBookAnother = () => {
-    navigate("/ticket-select");
+    navigate("/");
   };
 
   if (!ticketDetails) return <div>Loading...</div>;
@@ -59,7 +59,7 @@ export default function TicketReady() {
         <h2 className="title">MY TICKETS</h2>
         <div className="ticket-content">
           <h3 className="event-name">Techember Fest '25</h3>
-          <p className="event-details">📍 Event Location | March 15, 2025 | 7:50 PM</p>
+          <p className="event-details">📍 43, Runners road, Ikoyi, Lagos |📅 March 15, 2025 | 7:50 PM</p>
 
           <div className="attendee-info">
             <p><strong>Name:</strong> {ticketDetails.fullName}</p>
