@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDropzone } from "react-dropzone"; // Import useDropzone
 import "./AttendeeDetails.css";
 
 export default function AttendeeDetails() {
@@ -20,6 +21,16 @@ export default function AttendeeDetails() {
       setSpecialRequest(savedData.specialRequest || "");
     }
   }, []);
+
+  // Drag-and-drop file upload
+  const { getRootProps, getInputProps } = useDropzone({
+    accept: "image/*", // Accept only image files
+    onDrop: (acceptedFiles) => {
+      if (acceptedFiles.length > 0) {
+        handleImageUpload(acceptedFiles[0]); // Upload the first file
+      }
+    },
+  });
 
   const handleImageUpload = async (file) => {
     setIsUploading(true);
@@ -71,13 +82,27 @@ export default function AttendeeDetails() {
       navigate("/ticket-ready");
     }
   };
-  
 
   return (
     <div className="container">
       <div className="details-box">
         <h2 className="title">Attendee Details</h2>
         <form onSubmit={handleSubmit}>
+          {/* Drag-and-drop file upload */}
+          <div className="form-group">
+            <label htmlFor="avatar">Upload Avatar</label>
+            <div {...getRootProps()} className="dropzone">
+              <input {...getInputProps()} />
+              {avatarUrl ? (
+                <div className="avatar-preview">
+                  <img src={avatarUrl} alt="Uploaded Avatar" className="avatar-image" />
+                </div>
+              ) : (
+                <p> Drag & drop an image here, or click to select one</p>
+              )}
+            </div>
+          </div>
+
           <div className="form-group">
             <label htmlFor="fullName">Full Name</label>
             <input
@@ -107,21 +132,6 @@ export default function AttendeeDetails() {
               <span id="emailError" className="error">
                 {errors.email}
               </span>
-            )}
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="avatar">Upload Avatar</label>
-            <input
-              id="avatar"
-              type="file"
-              onChange={(e) => handleImageUpload(e.target.files[0])}
-              accept="image/*"
-            />
-            {avatarUrl && (
-              <div className="avatar-preview">
-                <img src={avatarUrl} alt="Uploaded Avatar" className="avatar-image" />
-              </div>
             )}
           </div>
 

@@ -15,6 +15,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    
   }
   
   .details-box {
@@ -39,17 +40,43 @@ body {
   
   label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 7px;
+    font-size: 0.8rem;
   }
   
   input,textarea {
     width: 90%;
-    padding: 10px;
+    padding: 8px;
     border: 1px solid #3a4f52;
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: #1C373D;
     color: #fff;
     font-size: 1em;
+  }
+
+  .dropzone {
+    border: 2px dashed #58C2C5;
+    width: 150px; 
+    height: 150px; 
+    border-radius: 10px;
+    padding: 10px; 
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin: 5px auto; 
+  }
+  
+  .dropzone:hover {
+    border-color: #45b2b3;
+  }
+  
+  .dropzone p {
+    margin: 0;
+    color: #bbb;
+    font-size: 14px; /* Adjusted font size for better readability */
   }
   
   .avatar-preview {
