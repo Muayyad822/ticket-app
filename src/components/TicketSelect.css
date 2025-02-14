@@ -1,5 +1,5 @@
 body {
-  margin: 10px;
+  /* margin: 10px; */
   padding: 10px;
   font-family: 'Inter', sans-serif;
   background-color: #0A1A1E;
@@ -11,7 +11,7 @@ body {
 }
 
 .container {
-  margin:10px;
+  /* margin:10px; */
   height: 100vh;
   padding: 20px;
 }
