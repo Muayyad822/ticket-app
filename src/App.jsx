@@ -10,6 +10,7 @@ function App() {
     
     <Router>
       <img src={Header} alt="Header" className="Header"/>
+      
       <Routes>
         <Route path="/" element={<SelectTicket />} />
         <Route path="/attendee-details" element={<AttendeeDetails />} />
