@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useDropzone } from "react-dropzone"; // Import useDropzone
+import { useDropzone } from "react-dropzone"; 
 import "./AttendeeDetails.css";
 
 export default function AttendeeDetails() {
@@ -70,6 +70,8 @@ export default function AttendeeDetails() {
     } else if (!/\S+@\S+\.\S+/.test(email)) {
       newErrors.email = "Email address is invalid";
     }
+    if (!avatarUrl) newErrors.avatar = "Avatar is required";
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -101,6 +103,7 @@ export default function AttendeeDetails() {
                 <p> Drag & drop an image here, or click to select one</p>
               )}
             </div>
+            {errors.avatar && <span className="error">{errors.avatar}</span>}
           </div>
 
           <div className="form-group">
@@ -157,7 +160,7 @@ export default function AttendeeDetails() {
             <button
               type="submit"
               className="submit-button"
-              disabled={isUploading || !fullName || !email}
+              disabled={isUploading}
             >
               {isUploading ? "Uploading..." : "Get My Free Ticket"}
             </button>
