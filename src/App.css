@@ -1,8 +1,12 @@
 body{
-    margin: 60px;
+    margin-top: 70px;
 }
 img{
-    margin-bottom: 0;
+    /* margin-bottom: 10px; */
     width: 100%;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto
 }

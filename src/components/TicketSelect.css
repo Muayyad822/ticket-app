@@ -11,7 +11,7 @@ body {
 }
 
 .container {
-  
+  margin:10px;
   height: 100vh;
   padding: 20px;
 }
