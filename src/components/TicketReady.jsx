@@ -44,6 +44,11 @@ export default function TicketReady() {
       link.href = image;
       link.download = `TechemberFest_Ticket_${ticketDetails?.fullName}.png`;
       link.click();
+
+      // Clear localStorage after ticket is generated
+      localStorage.removeItem("attendeeDetails");
+      localStorage.removeItem("selectedTicket");
+
     }
   };
 
