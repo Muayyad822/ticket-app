@@ -63,7 +63,7 @@ export default function TicketReady() {
       <div className="ticket-box" ref={ticketRef}>
         <h2 className="title">MY TICKETS</h2>
         <div className="ticket-content">
-          <h3 className="event-name">Techember Fest '25</h3>
+          <h3 className="event-name">Techember Fest `25</h3>
           <p className="event-details">📍 43, Runners road, Ikoyi, Lagos |📅 March 15, 2025 | 7:50 PM</p>
 
           <div className="attendee-info">

@@ -24,10 +24,10 @@ export default function AttendeeDetails() {
 
   // Drag-and-drop file upload
   const { getRootProps, getInputProps } = useDropzone({
-    accept: "image/*", // Accept only image files
+    accept: "image/*", 
     onDrop: (acceptedFiles) => {
       if (acceptedFiles.length > 0) {
-        handleImageUpload(acceptedFiles[0]); // Upload the first file
+        handleImageUpload(acceptedFiles[0]); 
       }
     },
   });

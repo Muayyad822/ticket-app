@@ -36,7 +36,7 @@ export default function TicketSelect() {
       <div className="ticket-box">
         <h2 className="title">Ticket Selection</h2>
         <div className="event-info">
-          <h3 className="event-name">Techember Fest '25</h3>
+          <h3 className="event-name">Techember Fest `25</h3>
           <p className="event-description">Join us for an unforgettable experience.</p>
           <p className="event-details">📍 Event Location |📅 March 15, 2025 |🕕 7:00 PM</p>
         </div>
