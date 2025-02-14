@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import html2canvas from "html2canvas";
 import "./TicketReady.css";
-import barcodeImage from "./barcode.png";
+import barcodeImage from "../assets/barcode.png";
 
 export default function TicketReady() {
   const [ticketDetails, setTicketDetails] = useState(null);
