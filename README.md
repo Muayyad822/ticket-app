@@ -1,15 +1,25 @@
 # Ticket App
 
-A simple ticket management application for creating, tracking, and resolving support tickets.
+A simple ticket management application for event registration with customizable attendee details and downloadable tickets.
 
 ## Features
 
-It allows users to:
-- Select a ticket type from available options
-- Enter details including name, email, and upload an avatar via drag-and-drop
-- Generate a downloadable ticket with a barcode
+- Ticket selection from available options
+- Attendee details collection (name, email, special requests)
+- Avatar upload via drag-and-drop using react-dropzone
+- Ticket generation with barcode
+- Downloadable ticket as PNG using html2canvas
+- Multi-step form process across different routes
 
-## Getting Started
+## Technical Stack
+
+- React
+- React Router
+- React Dropzone
+- html2canvas
+- Vite
+- CSS (for styling)
+
 
 ### Prerequisites
 
